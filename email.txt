@@ -1,0 +1,7 @@
+Dear {user},
+
+You have not solved any problem on Leetcode for more than a day.
+
+Go to https://leetcode.com/problemset/all/ and start solving problems now!
+
+Leetcode Reminder Bot (Developed by Liwei Cai. Contact: cai.lw123@gmail.com)

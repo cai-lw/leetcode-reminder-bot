@@ -12,4 +12,5 @@ def notify_by_email(user, email):
     content = Content('text/plain', open('email.txt').read().format(user=user))
     mail = Mail(from_email, subject, to_email, content)
     response = sg.client.mail.send.post(request_body=mail.get())
+    print("Sent email to %s\'s email %s. Status code: %d." % (user, email, response.status_code))
     return response

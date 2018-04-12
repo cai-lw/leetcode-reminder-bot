@@ -9,6 +9,7 @@ def scrap_user(user):
     ret = []
     resp = requests.get('https://leetcode.com/%s/' % user)
     if not resp.ok:
+        print('Failed scraping user %s\'s Leetcode status' % user)
         return None
     soup = BeautifulSoup(resp.text, 'html.parser')
     for a in soup.find_all('a', href=re_problems):
@@ -24,4 +25,5 @@ def scrap_user(user):
             if hours:
                 minutes += int(hours) * 60
             ret.append((problem, status, minutes))
+    print('Retrieved user %s\'s Leetcode status:' % user, ret)
     return ret
